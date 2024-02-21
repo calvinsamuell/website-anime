@@ -1,10 +1,19 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <nav class="nav">
+    <h3 class="text-white">Anonime</h3>
+    <router-link to="/" class="nav-link">Home</router-link>
+    <router-link :to="{name: 'Manga'}" class="nav-link">Manga</router-link>
   </nav>
-  <router-view/>
+  <router-view />
 </template>
+
+
+<script>
+import Home from './views/Home.vue'
+export default{
+  components: {Home}
+}
+</script>
 
 <style>
 #app {
@@ -15,16 +24,25 @@
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
+nav,
+body {
+  background: rgb(26 25 39);
 }
 
 nav a {
-  font-weight: bold;
-  color: #2c3e50;
+  color: white;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.card, .carousel-anime {
+      transition: transform 0.3s ease;
+    }
+
+.card:hover, .carousel-anime:hover {
+  transform: scale(1.1);
 }
+
+.carousel-item:hover .carousel-caption {
+      display: block;
+    }
+
 </style>
